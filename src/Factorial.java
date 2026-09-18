@@ -1,5 +1,5 @@
 public class Factorial {
-    // Fer crea los algoritmos de factorial (Listo :P)
+    // Fer crea los algoritmos de factorial (Listo :P xd)
 
     long factorial;
     public class FactorialIterativo {
