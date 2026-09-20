@@ -22,7 +22,8 @@ public class Main {
                     "9.- Factorial - Recursivo (Práctica 4)\n" +
                     "10.- Backtracking: dado un arreglo A de tamaño N, encontrar uno o varios subconjuntos \n" +
                     "cuya suma sea exactamente K (utilizando el ejemplo visto en clase)\n" +
-                    "11.Salir\n"
+                    "11.-Torres de hanoi (extra)\n" +
+                    "12.Salir\n"
             );
 
             try {
@@ -119,12 +120,21 @@ public class Main {
                     break;
                 }
 
-
                 case 11:{
+                    int N=pedirNumero();
+                    Extras extras = new Extras();
+                    extras.torresHanoi(N);
+                    espera();
+                    break;
+                }
+
+                case 12:{
                     System.out.println("Gracias por probar nuestro programa"+
                             "\nSaliendo...");
                     return;
                 }
+
+
 
                 default:{
                     System.out.println("Ingresa un numero valido");
