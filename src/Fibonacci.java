@@ -38,7 +38,6 @@ public class Fibonacci {
             b = fn;
         }
 
-        System.out.println();
     }
 
     // 2. RECURSIVO
