@@ -23,7 +23,8 @@ public class Main {
                     "10.- Backtracking: dado un arreglo A de tamaño N, encontrar uno o varios subconjuntos \n" +
                     "cuya suma sea exactamente K (utilizando el ejemplo visto en clase)\n" +
                     "11.-Torres de hanoi (extra)\n" +
-                    "12.Salir\n"
+                    "12.-Cambio de la moneda (extra)\n" +
+                    "13.Salir\n"
             );
 
             try {
@@ -129,6 +130,20 @@ public class Main {
                 }
 
                 case 12:{
+                    System.out.println("Ingrese cuanto es el cambio");
+                    int k=pedirNumero();
+                    System.out.println("Ingrese las monedas que hay disponibles");
+                    ArrayList<Integer> arreglo = new ArrayList<>();
+                    arreglo=pedirArreglo();
+                    Extras extras = new Extras();
+                    int cambio=extras.Cambio(arreglo.toArray().length, arreglo, k);
+                    System.out.println("El numero minimo de monedas es: "+cambio);
+                    System.out.println(extras.lista);
+                    espera();
+                    break;
+                }
+
+                case 13:{
                     System.out.println("Gracias por probar nuestro programa"+
                             "\nSaliendo...");
                     return;
