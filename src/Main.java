@@ -22,7 +22,10 @@ public class Main {
                     "9.- Factorial - Recursivo (Práctica 4)\n" +
                     "10.- Backtracking: dado un arreglo A de tamaño N, encontrar uno o varios subconjuntos \n" +
                     "cuya suma sea exactamente K (utilizando el ejemplo visto en clase)\n" +
-                    "11.Salir\n"
+                    "11.-Torres de hanoi (extra)\n" +
+                    "12.-Cambio de la moneda (extra)\n" +
+                    "13.-Problema de N-Reinas y todas sus soluciones\n" +
+                    "14.Salir\n"
             );
 
             try {
@@ -68,8 +71,7 @@ public class Main {
 
                 case 5:{
                     int numero = pedirNumero();
-                    System.out.println("El numero del lugar "+numero+" en la sucecion" +
-                            "de fibonacci es: ");//Ahi va el metodo
+                    Fibonacci.fibonacciIterativo(numero);
                     espera();
                     break;
                 }
@@ -77,15 +79,16 @@ public class Main {
                 case 6:{
                     int numero = pedirNumero();
                     System.out.println("El numero del lugar "+numero+" en la sucecion" +
-                            "de fibonacci es: ");//Ahi va el metodo
+                            "de fibonacci es: "+Fibonacci.fibonacciRecursivo(numero));
                     espera();
                     break;//2
                 }
 
                 case 7:{
                     int numero = pedirNumero();
+                    int[] afibd = new int[numero + 1];
                     System.out.println("El numero del lugar "+numero+" en la sucecion" +
-                            "de fibonacci es: ");//Ahi va el metodo
+                            "de fibonacci es: "+Fibonacci.fibonacciDinamico(numero, afibd));
                     espera();
                     break;//3
                 }
@@ -119,12 +122,43 @@ public class Main {
                     break;
                 }
 
-
                 case 11:{
+                    int N=pedirNumero();
+                    Extras extras = new Extras();
+                    extras.torresHanoi(N);
+                    espera();
+                    break;
+                }
+
+                case 12:{
+                    System.out.println("Ingrese cuanto es el cambio");
+                    int k=pedirNumero();
+                    System.out.println("Ingrese las monedas que hay disponibles");
+                    ArrayList<Integer> arreglo = new ArrayList<>();
+                    arreglo=pedirArreglo();
+                    Extras extras = new Extras();
+                    int cambio=extras.Cambio(arreglo.toArray().length, arreglo, k);
+                    System.out.println("El numero minimo de monedas es: "+cambio);
+                    System.out.println(extras.lista);
+                    espera();
+                    break;
+                }
+
+                case 13:{
+                    int N=pedirNumero();
+                    Extras extras = new Extras();
+                    extras.N_Reinas(N);
+                    espera();
+                    break;
+                }
+
+                case 14:{
                     System.out.println("Gracias por probar nuestro programa"+
                             "\nSaliendo...");
                     return;
                 }
+
+
 
                 default:{
                     System.out.println("Ingresa un numero valido");
