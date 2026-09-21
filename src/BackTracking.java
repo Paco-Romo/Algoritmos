@@ -6,30 +6,62 @@ public class BackTracking {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        ArrayList<Integer> arreglo = Main.pedirArreglo();
-        ArrayList<Integer> solucion = new ArrayList<>();
 
+        ArrayList<Integer> arreglo = Main.pedirArreglo();
 
         System.out.println("Ingresa el valor al que quieres encontrar solución: ");
         int valor = sc.nextInt();
-        int suma = 0;
 
-        // Restricción
-        if (suma < valor) {
+        ArrayList<ArrayList<Integer>> soluciones = new ArrayList<>();
+        ArrayList<Integer> solucion = new ArrayList<>();
 
-            for (int i = 0; i < arreglo.size(); i++) {
+        backtracking(arreglo, valor, 0, 0, solucion, soluciones);
 
-                if (suma + arreglo.get(i) <= valor) {
+        System.out.println("\nArreglo original: " + arreglo);
+        System.out.println("Soluciones encontradas:");
 
-                    solucion.add(arreglo.get(i));
-                    suma += arreglo.get(i);
+        for (ArrayList<Integer> s : soluciones) {
+            System.out.println(s);
+        }
+    }
 
-                }
-            }
+
+    public static void backtracking(
+            ArrayList<Integer> arreglo,
+            int valor,
+            int indice,
+            int suma,
+            ArrayList<Integer> solucion,
+            ArrayList<ArrayList<Integer>> soluciones) {
+
+        if (suma == valor) {
+
+            soluciones.add(new ArrayList<>(solucion));
+
+            return;
         }
 
-        System.out.println("Arreglo original: " + arreglo);
-        System.out.println("Solución: " + solucion);
-        System.out.println("Suma: " + suma);
+        if (suma > valor) {
+            return;
+        }
+
+        for (int i = indice; i < arreglo.size(); i++) {
+
+            if (suma + arreglo.get(i) <= valor) {
+
+                solucion.add(arreglo.get(i));
+
+                backtracking(
+                        arreglo,
+                        valor,
+                        i + 1,
+                        suma + arreglo.get(i),
+                        solucion,
+                        soluciones
+                );
+
+                solucion.remove(solucion.size() - 1);
+            }
+        }
     }
 }
