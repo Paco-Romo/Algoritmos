@@ -1,7 +1,7 @@
 public class Arreglos {
 
     public class ArregloNumeroMenor {
-        public static void main(String[] args) {
+        public static int main(String[] args) {
             int[] arreglo = {8, 4, 10, 2, 6, 1, 9};
             int m = arreglo[0];
             for (int i = 1; i < arreglo.length; i++)
