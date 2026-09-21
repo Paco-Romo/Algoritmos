@@ -1,5 +1,5 @@
 public class Enteros {
-    //todo Kevin crea estos algoritmos
+
     //- Suma N enteros - Iterativo
 
     public static int sumaIterativa(int n) {

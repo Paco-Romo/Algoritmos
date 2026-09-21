@@ -40,31 +40,38 @@ public class Main {
 
             switch (opcion) {
                 case 1:{
-                    pedirArreglo();
-                    //Aquí se llama la función con el arreglo
+                    ArrayList<Integer> numeros = pedirArreglo();
+                    Arreglos arreglo = new Arreglos();
+                    Arreglos.ArregloNumeroMenor arreglo2= arreglo.new ArregloNumeroMenor();
+                    System.out.println("El numero menor del arreglo es: "+
+                            arreglo2.numeroMenor(numeros));
+
                     espera();
                     break;
                 }
 
                 case 2:{
-                    pedirArreglo();
-                    //Aquí se llama la función con el arregl
+                    ArrayList<Integer> numeros = pedirArreglo();
+                    Arreglos arreglo = new Arreglos();
+                    Arreglos.OrdenarArreglo arreglo3= arreglo.new OrdenarArreglo();
+                    System.out.println("El arreglo ya ordenado es: ");
+                    arreglo3.ordenarArreglo(numeros);
                     espera();
                     break;
                 }
 
                 case 3:{
                     int numero = pedirNumero();
-                    System.out.println("La suma de los primeros "+numero+" es: ");
-                    //arriba va el metodo
+                    System.out.println("La suma de los primeros "+numero+" es: "
+                            +Enteros.sumaIterativa(numero));
                     espera();
                     break;
                 }
 
                 case 4:{
                     int numero = pedirNumero();
-                    System.out.println("La suma de los primeros "+numero+" es: ");
-                    //arriba va el metod
+                    System.out.println("La suma de los primeros "+numero+" es: "+
+                            Enteros.sumaRecursiva(numero));
                     espera();
                     break;
                 }
@@ -114,10 +121,21 @@ public class Main {
                 }
 
                 case 10:{
-                    pedirArreglo();
-                    System.out.println("Ingrese cuanto quiere que sea la suma");
-                    pedirNumero();
-                    //Aqui se manda a llamar el metodo
+                    ArrayList<Integer> arreglo = pedirArreglo();
+
+                    System.out.println("Ingresa el valor al que quieres encontrar solución: ");
+                    int valor = pedirNumero();
+
+                    ArrayList<ArrayList<Integer>> soluciones = new ArrayList<>();
+                    ArrayList<Integer> solucion = new ArrayList<>();
+
+                    BackTracking.backtracking(arreglo, valor, 0, 0, solucion, soluciones);
+                    System.out.println("\nArreglo original: " + arreglo);
+                    System.out.println("Soluciones encontradas:");
+
+                    for (ArrayList<Integer> s : soluciones) {
+                        System.out.println(s);
+                    }
                     espera();
                     break;
                 }
