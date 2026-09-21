@@ -24,7 +24,8 @@ public class Main {
                     "cuya suma sea exactamente K (utilizando el ejemplo visto en clase)\n" +
                     "11.-Torres de hanoi (extra)\n" +
                     "12.-Cambio de la moneda (extra)\n" +
-                    "13.Salir\n"
+                    "13.-Problema de N-Reinas y todas sus soluciones\n" +
+                    "14.Salir\n"
             );
 
             try {
@@ -70,8 +71,7 @@ public class Main {
 
                 case 5:{
                     int numero = pedirNumero();
-                    System.out.println("El numero del lugar "+numero+" en la sucecion" +
-                            "de fibonacci es: ");//Ahi va el metodo
+                    Fibonacci.fibonacciIterativo(numero);
                     espera();
                     break;
                 }
@@ -79,15 +79,16 @@ public class Main {
                 case 6:{
                     int numero = pedirNumero();
                     System.out.println("El numero del lugar "+numero+" en la sucecion" +
-                            "de fibonacci es: ");//Ahi va el metodo
+                            "de fibonacci es: "+Fibonacci.fibonacciRecursivo(numero));
                     espera();
                     break;//2
                 }
 
                 case 7:{
                     int numero = pedirNumero();
+                    int[] afibd = new int[numero + 1];
                     System.out.println("El numero del lugar "+numero+" en la sucecion" +
-                            "de fibonacci es: ");//Ahi va el metodo
+                            "de fibonacci es: "+Fibonacci.fibonacciDinamico(numero, afibd));
                     espera();
                     break;//3
                 }
@@ -144,6 +145,14 @@ public class Main {
                 }
 
                 case 13:{
+                    int N=pedirNumero();
+                    Extras extras = new Extras();
+                    extras.N_Reinas(N);
+                    espera();
+                    break;
+                }
+
+                case 14:{
                     System.out.println("Gracias por probar nuestro programa"+
                             "\nSaliendo...");
                     return;
