@@ -59,9 +59,9 @@ public class BackTracking {
                         solucion,
                         soluciones
                 );
-
                 solucion.remove(solucion.size() - 1);
             }
         }
     }
+
 }
