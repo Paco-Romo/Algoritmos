@@ -49,13 +49,16 @@ public class Arreglos {
                         ordenado = false;
                     }
                 }
-                num = A.get(inicio - 1);
-                A.set(inicio - 1, min);
-                A.set(m, num);
+                if (ordenado == false) {
+                    num = A.get(inicio - 1);
+                    A.set(inicio - 1, min);
+                    A.set(m, num);
 
-                inicio++;
-                n--;
-                min = A.get(inicio - 1);
+                    inicio++;
+                    n--;
+                    min = A.get(inicio - 1);
+                }
+
             }
             System.out.println(A);
         }

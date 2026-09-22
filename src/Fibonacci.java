@@ -30,7 +30,7 @@ public class Fibonacci {
     public static void fibonacciIterativo(int n) {
         int a = 0, b = 1;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= n; i++) {
             System.out.print(a + " ");
 
             int fn = a + b;
